@@ -1,183 +1,150 @@
 .checkout-card-component {
-   max-width: 520px;
-   width: 100%;
-   height: 550px;
-   background-color: white;
-   border-radius: 24px;
-   padding: 40px;
+    max-width: 520px;
+    height: 550px;
+    width: 100%;
+    background-color: white;
+    border-radius: 24px;
+    padding: 40px;
 
-   & &__header {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-bottom: 24px;
-
-    &-title {
-        font-size: 32px;
-        font-weight: bold;
+    @media (max-width: 375px) {
+        height: 100%;
+        padding: 40px 24px;
+        border-radius: 0;
     }
 
-    &-subtitle {
-        font-size: 16px;
-        opacity: 50%;
-    }
-   }
-
-   & &__cart {
-    display: flex;
-    margin-bottom: 24px;
-    justify-content: space-between;
-    font-size: 18px;
-
-    &-product {
-        display: flex;
-        gap: 16px;
-
-        &_preview {
-            border-radius: 16px;
-            background-color: var(--color-white-900);
-            height: 80px;
-            width: 80px;
-            padding: 20px;
-        }
-
-        &_name {
+    & &__header {
+        &-line {
             display: flex;
             flex-direction: column;
-            gap: 8px;
-            justify-content: center;
-
-            p:first-child {
-                font-weight: 600;
-            }
-
-            P:last-child {
-                font-size: 14px;
-                opacity: .5;
-            }
+            gap: 12px;
+            margin-bottom: 40px;
         }
+        &-title {
+            font-size: 32px;
+            font-weight: 700;
+        }
+        &-subtitle {
+            opacity: .5;
+        }
+    }
 
-        &_price {
+    & &__product {
+        &-line {
             display: flex;
-            gap: 4px;
-            padding-top: 18.5px;
-
-            p:last-child {
-                font-size: 12px;
-                padding-top: 6px;
-                opacity: .5;
-            }
+            justify-content: space-between;
+        }
+        &-info {
+            display: flex;
+            align-items: center;
+        }
+        &-image {
+            width: 80px;
+            height: 80px;
+            background-color: var(--color-black-200);
+            border-radius: 16px;
+            padding: 20px;
+            margin-right: 16px;
+        }
+        &-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        &-description {
+            opacity: .5;
+            font-size: 14px;
+        }
+        &-price {
+            margin-top: 18.5px;
+            font-size: 18px;
         }
     }
-   }
 
-   & &__line {
-    height: 1px;
-    background-color: var(--color-black-500);
-    margin-bottom: 24px;
-   }
-
-   & &__summary {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 24px;
-
-    p:first-child {
+    & &__per-month-annotation {
+        font-size: 12px;
         opacity: .5;
+        font-weight: 400;
     }
 
-    &-price {
-        display: flex;
-        flex-direction: row;
-        gap: 4px;
-        
-        p:first-child {
-            opacity: 1;
-        }
+    & &__line {
+        border: 1px solid var(--color-black-500);
+        margin: 24px 0px;
 
-        p:last-child {
-            font-size: 12px;
+        @media (max-width: 375px) {
+            margin-top: 286px;
+        }
+    }
+
+    & &__summary {
+        &-line {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
+        &-details {
             opacity: .5;
-            padding-top: 4px;
         }
     }
-   }
 
-   & &__total {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 48px;
-    font-size: 24px;
-    font-weight: 500;
-
-    &-price {
-        display: flex;
-        flex-direction: row;
-        gap: 4px;
-        font-weight: 700;
-
-        p:last-child {
-            font-size: 12px;
-            opacity: .5;
-            padding-top: 11px;
-            font-weight: 400;
+    & &__total {
+        &-line {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 48px;
+        }
+        &-details {
+            font-size: 24px;
+            font-weight: 500;
+        }
+        &-price {
+            font-size: 24px;
+            font-weight: 700;
         }
     }
-   }
 
-   & &__buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-
-    button {
-        border: none;
-        border-radius: 60px;
-        width: 100%;
-        height: 56px;
+    & &__buttons {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: 0.2s;
-    
-        &:hover {
+        flex-direction: column;
+        gap: 12px;
+
+        button {
+            border: none;
+            border-radius: 60px;
+            height: 56px;
+            transition: .2s;
             cursor: pointer;
-        }
-    
-        &.btn-primary {
-            background-color: var(--primary-color);
-            font-weight: 700;
-    
-            &:hover {
-                background-color: var(--primary-color-dark);
+
+            @media (max-width: 375px) {
+                height: 54px;
             }
 
-            &:active {
-                background-color: var(--color-green-900);
-            }
-        }
-    
-        &.btn-secondary {
-            background-color: white;
-            color: var(--color-black-500);
-            border: 1px solid var(--color-black-500);
-            font-weight: 700;
-    
-            &:hover {
-                cursor: pointer;
-                border-color: var(--color-black-700);
-                color: var(--color-black-700);
-                background-color: var(--color-black-100);
+            &.btn-primary {
+                background-color: var(--primary-color);
+                font-weight: 700;
+                &:hover {
+                    background-color: var(--primary-color-dark);
+                }
+                &:active {
+                    background-color: var(--color-green-900);
+                }
             }
 
-            &:active {
-                border-color: var(--color-black-900);
-                color: var(--color-black-900);
-                background-color: var(--color-black-300);
+            &.btn-secondary {
+                background-color: white;
+                border: 1px solid var(--color-black-500);
+                color: var(--color-black-500);
+                font-weight: bold;
+                &:hover {
+                    color: var(--color-black-700);
+                    border-color: var(--color-black-700);
+                    background-color: var(--color-white-100);
+                }
+                &:active {
+                    color: var(--color-black-900);
+                    border-color: var(--color-black-900);
+                    background-color: var(--color-white-200);
+                }
             }
         }
     }
-   }
 }
