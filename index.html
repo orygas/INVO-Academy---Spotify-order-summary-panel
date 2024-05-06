@@ -17,7 +17,7 @@
           <div class="checkout-card-component__header-subtitle">Check if your order matches</div>
         </div>
 
-        <div class="checkout-card-component__product-line">
+        <div class="checkout-card-component__product-line" data-product-id="12345">
           <div class="checkout-card-component__product-info">
             <div class="checkout-card-component__product-image">
               <img src="assets/icons/Spotify_logo.svg" alt="Product cover">
@@ -54,7 +54,12 @@
         </div>
 
         <div class="checkout-card-component__buttons">
-          <button class="btn-primary">Confirm and pay</button>
+          <button class="btn-primary" data-loading="0">
+            <div class="btn-primary__text">Confirm and pay</div>
+            <div class="btn-primary__loader">
+              <img src="assets/icons/animated-loader.svg" alt="Loading...">
+            </div>
+          </button>
           <button class="btn-secondary">Cancel order</button>
         </div>
 

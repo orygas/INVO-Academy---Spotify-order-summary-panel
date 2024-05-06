@@ -114,6 +114,13 @@
             transition: .2s;
             cursor: pointer;
 
+            &:disabled {
+                opacity: .5;
+                &:hover {
+                    cursor: not-allowed;
+                }
+            }
+
             @media (max-width: 375px) {
                 height: 54px;
             }
@@ -127,6 +134,27 @@
                 &:active {
                     background-color: var(--color-green-900);
                 }
+                &[data-loading="1"] {
+                    &:hover {
+                        cursor: not-allowed;
+                        background-color: var(--primary-color);
+                    }
+                    .btn-primary__text {
+                        display: none;
+                    }
+                    .btn-primary__loader {
+                        display: block;
+                        height: 65%;
+                    }
+                }
+            }
+
+            .btn-primary__text {
+                display: block;
+            }
+
+            .btn-primary__loader {
+                display: none;
             }
 
             &.btn-secondary {
