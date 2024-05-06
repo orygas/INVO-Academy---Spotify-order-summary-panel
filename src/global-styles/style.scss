@@ -6,12 +6,53 @@
 @use "styles/fonts.scss";
 @use "styles/buttons.scss";
 
+:root {
+  --color-green-100: #D1F2D4;
+  --color-green-200: #B2EAB7;
+  --color-green-300: #93E19A;
+  --color-green-400: #7CDA84;
+  --color-green-500: #65D46E;
+  --color-green-600: #5DCF66;
+  --color-green-700: #53C95B;
+  --color-green-800: #49C351;
+  --color-green-900: #37B93F;
+
+  --color-white-100: #FAFAFA;
+  --color-white-200: #F7F7F7;
+  --color-white-300: #F4F4F4;
+  --color-white-400: #F1F1F1;
+  --color-white-500: #EFEFEF;
+  --color-white-600: #EDEDED;
+  --color-white-700: #EBEBEB;
+  --color-white-800: #E8E8E8;
+  --color-white-900: #E4E4E4;
+
+  --color-black-100: #EFEFEF;
+  --color-black-200: #E4E4E4;
+  --color-black-300: #D9D9D9;
+  --color-black-400: #D1D1D1;
+  --color-black-500: #C9C9C9;
+  --color-black-600: #C3C3C3;
+  --color-black-700: #BCBCBC;
+  --color-black-800: #B5B5B5;
+  --color-black-900: #A9A9A9;
+
+  --primary-color: var(--color-green-500);
+  --primary-color-dark: var(--color-green-700);
+  --primary-color-light: var(--color-green-300);
+
+  --background-color: var(--color-white-100);
+  --content-color: var(--color-black-900);
+  --canvas-color: var(--color-white-500);
+}
+
 body, html {
   min-height: 100%;
 }
 
 body {
   font-family: 'Lato', sans-serif;
+  background-color: var(--canvas-color);
 }
 
 img {
@@ -22,4 +63,8 @@ img {
   &.img--cover {
     object-fit: cover;
   }
+}
+
+p {
+  margin: 0;
 }
